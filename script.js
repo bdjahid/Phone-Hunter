@@ -34,15 +34,25 @@ const displayPhone = phones => {
         `;
         phoneContainer.appendChild(phoneCard);
     });
+    toggleLoadingSpinner(false)
 }
 
 // handle search button
 const handleSearch = () => {
     // console.log('click')
+    toggleLoadingSpinner(true)
     const inputField = document.getElementById('input-field');
     const inputValue = inputField.value;
     console.log(inputValue)
     loadPhone(inputValue)
 }
 
+const toggleLoadingSpinner = (isLoading) => {
+    const loadingDots = document.getElementById('loading-dots')
+    if (isLoading) {
+        loadingDots.classList.remove('hidden')
+    } else {
+        loadingDots.classList.add('hidden')
+    }
+}
 loadPhone()
