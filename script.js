@@ -11,17 +11,25 @@ const displayPhone = phones => {
     phones.forEach(phone => {
         console.log(phone)
         const phoneCard = document.createElement('div');
-        phoneCard.classList = `card card-compact w-96 bg-gray-100 shadow-xl`;
+        phoneCard.classList = `card card-compact p-4 bg-gray-300 shadow-xl`;
         phoneCard.innerHTML = `
         <figure><img src="${phone.image}" /></figure>
         <div class="card-body">
-            <h2 class="card-title">Shoes!</h2>
+            <h2 class="card-title">${phone.phone_name}</h2>
             <p>If a dog chews shoes whose shoes does he choose?</p>
             <div class="card-actions justify-end">
             <button class="btn btn-primary">Buy Now</button>
         `;
         phoneContainer.appendChild(phoneCard);
     });
+}
+
+// handle search button
+const handleSearch = () => {
+    // console.log('click')
+    const inputField = document.getElementById('input-field');
+    const inputValue = inputField.value;
+    console.log(inputValue)
 }
 
 loadPhone()
