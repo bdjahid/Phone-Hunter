@@ -22,9 +22,11 @@
         </section>
 
         <section>
+            <!-- spinner -->
             <div id="loading-dots" class="text-center hidden">
                 <span class="loading loading-dots loading-lg"></span>
             </div>
+            <!-- show phones -->
             <div id="phone-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 <!-- <div class="card card-compact w-96 bg-gray-100 shadow-xl">
                     <figure><img src="/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure>
@@ -38,9 +40,25 @@
                 </div> -->
             </div>
             <!-- show all button -->
-            <div id="show-all-phone" class="hidden">
-                <button class="btn btn-active btn-accent">Show All</button>
+            <div id="show-all-phone" class="hidden text-center my-8">
+                <button onclick="btnShowAll()" class="btn btn-active btn-accent">Show All</button>
             </div>
+            <!-- modal -->
+            <!-- Open the modal using ID.showModal() method -->
+            <dialog id="my_modal_phone" class="modal modal-bottom sm:modal-middle">
+                <div class="modal-box">
+                    <h3 id="show-phone-title" class="font-bold text-lg">Hello!</h3>
+                    <div id="show-details-container">
+
+                    </div>
+                    <div class="modal-action">
+                        <form method="dialog">
+                            <!-- if there is a button in form, it will close the modal -->
+                            <button class="btn">Close</button>
+                        </form>
+                    </div>
+                </div>
+            </dialog>
         </section>
     </main>
     <footer>
